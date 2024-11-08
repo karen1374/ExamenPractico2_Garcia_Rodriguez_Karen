@@ -17,11 +17,11 @@ and open the template in the editor.
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #f0f0f0;
+            background-color: #608BC1;
         }
 
-        .container {
-            background-color: white;
+        .contenedor {
+            background-color: #7AB2D3;
             padding: 2rem;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -37,14 +37,14 @@ and open the template in the editor.
         }
 
         button {
-            background-color: #4CAF50;
+            background-color: #37AFE1;
             color: white;
             border: none;
             cursor: pointer;
         }
 
-        button.clear {
-            background-color: #f44336;
+        button.limpiar {
+            background-color: #789DBC;
         }
 
         .total {
@@ -55,42 +55,40 @@ and open the template in the editor.
     </style>
     </head>
     <body>
-        <div class="container">
-            <div>
-            <h1>Garcia Rodriguez Karen Edith SA de CV</h1>
-        </div>
-        <input type="text" id="product-name" placeholder="Nombre del Producto">
-        <input type="number" id="quantity" placeholder="Cantidad">
-        <input type="number" id="price" placeholder="Precio">
-        <button id="calculate-btn">Calcular Venta</button>
-        <button class="clear" id="clear-btn">Limpiar</button>
+        <div class="contenedor">
+            <h3>Garcia Rodriguez Karen SA de CV</h3>
+        <input type="text" id="nombre-producto" placeholder="Nombre del Producto">
+        <input type="number" id="cantidad" placeholder="Cantidad">
+        <input type="number" id="precio" placeholder="Precio">
+        <button id="calcular-btn">Calcular Venta</button>
+        <button class="limpiar" id="limpiar-btn">Limpiar</button>
         <div class="total">
-            Total: <span id="total-amount">0.00</span>
+            Total: <span id="total-monto">0.00</span>
         </div>
     </div>
 
     <script>
-        const productName = document.getElementById('product-name');
-        const quantity = document.getElementById('quantity');
-        const price = document.getElementById('price');
-        const totalAmount = document.getElementById('total-amount');
-        const calculateBtn = document.getElementById('calculate-btn');
-        const clearBtn = document.getElementById('clear-btn');
+        const nombreProducto = document.getElementById('nombre-producto');
+        const cantidad = document.getElementById('cantidad');
+        const precio = document.getElementById('precio');
+        const totalMonto = document.getElementById('total-monto');
+        const calcularBtn = document.getElementById('calcular-btn');
+        const limpiarBtn = document.getElementById('limpiar-btn');
 
-        function calculateTotal() {
-            const total = quantity.value * price.value;
-            totalAmount.textContent = total.toFixed(2);
+        function calcularTotal() {
+            const total = cantidad.value * precio.value;
+            totalMonto.textContent = total.toFixed(2);
         }
 
-        function clearFields() {
-            productName.value = '';
-            quantity.value = '';
-            price.value = '';
-            totalAmount.textContent = '0.00';
+        function limpiarCampos() {
+            nombreProducto.value = '';
+            cantidad.value = '';
+            precio.value = '';
+            totalMonto.textContent = '0.00';
         }
 
-        calculateBtn.addEventListener('click', calculateTotal);
-        clearBtn.addEventListener('click', clearFields);
+        calcularBtn.addEventListener('click', calcularTotal);
+        limpiarBtn.addEventListener('click', limpiarCampos);
     </script>
     </body>
 </html>
